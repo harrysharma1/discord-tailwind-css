@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Sidebar from './Sidebar'
+import Channel from './Channel'
 function App() {
   return (
-    <div className="text-center text-teal-600 text-lg font-bold">
-     React App
+    <div className="flex flex-row">
+        <Sidebar/>
+        <Channel/>
     </div>
   );
 }
