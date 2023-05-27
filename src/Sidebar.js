@@ -4,9 +4,9 @@ import * as BootstrapIcons from 'react-icons/bs'
 function Sidebar() {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg">
-        <SidebarIcon icon={<FaIcons.FaFire size={28}/>}/>
+        <SidebarIcon icon={<FaIcons.FaGithub size={28}/>}/>
         <Divider/>
-        <SidebarIcon icon={<BootstrapIcons.BsPlus size={32}/>}/>
+        <SidebarIcon icon={<FaIcons.FaLinkedin size={32}/>}/>
         <SidebarIcon icon={<BootstrapIcons.BsFillLightningFill size={20}/>}/>
         <SidebarIcon icon={<FaIcons.FaOilCan size={20}/>}/>
         <Divider/>

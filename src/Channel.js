@@ -18,29 +18,44 @@ const ChannelBarHead = () => {
 
 const ChannelBarBody = () => {
     return(
-        <div className="channel-bar-body">
+        <div>
             <ChannelBarBodyDropdown title="Topics" subcategories={["tailwind-css","react"]} />
             <ChannelBarBodyDropdown title="Questions" subcategories={["jit-compilation","purge-files","dark-mode"]}/>
             <ChannelBarBodyDropdown title="Random" subcategories={["variants","plugins"]}/>
-            <ChannelBarBodyDropdown/>  
         </div>
     )
 }
 
 const ChannelBarBodyDropdown = ({title,subcategories}) => {
     const [expanded, setExpanded] = useState(false);
+    const handleClick = ()=>{
+        setExpanded(!expanded);
+    }
         return(
             <div className="channel-bar-body-dropdown">
-                <div onClick={()=>setExpanded(!expanded)}>
+                <div onClick={handleClick}className="channel-bar-body-dropdown-header">
                     <Chevron expanded={expanded}/>
-                    <h5 className={expanded ?'channel-bar-body-dropdown-selected':'channel-bar-body-dropdown-text'}>{title}</h5>
+                    <h5 className={expanded ?'channel-bar-body-dropdown-selected':'channel-bar-body-dropdown-text'}>
+                         {title}
+                    </h5>
+                    <FaIcons.FaPlus />
                 </div>
+                {expanded && 
+                    subcategories&&
+                    subcategories.map((subcategory)=><ChannelBarBodyDropdownItem subcategory={subcategory}/>)
+                }
             </div>
         )
 }
-
+const ChannelBarBodyDropdownItem = ({subcategory}) => {
+        return(
+            <div className="channel-bar-body-dropdown-items">
+                # {subcategory}
+            </div>
+        )
+}
 const Chevron = ({expanded}) => {
-    const chevClass=''
+    const chevClass="chevron-icon"
     return expanded ? (
         <FaIcons.FaChevronDown className={chevClass}/>
     ):(
