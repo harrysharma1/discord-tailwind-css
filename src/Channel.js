@@ -2,11 +2,7 @@ import { useState } from 'react';
 import * as BootstrapIcons from 'react-icons/bs';
 import * as FaIcons from 'react-icons/fa';
 
-const ChannelBar = () => {
-    <div >
 
-    </div>
-}
 
 const ChannelBarHead = () => {
     return(
@@ -50,7 +46,11 @@ const ChannelBarBodyDropdown = ({title,subcategories}) => {
 const ChannelBarBodyDropdownItem = ({subcategory}) => {
         return(
             <div className="channel-bar-body-dropdown-items">
-                # {subcategory}
+                <BootstrapIcons.BsHash size={25} className="text-white"/>  
+                <div className="justify-items-center">
+                    {subcategory}
+                </div>
+                
             </div>
         )
 }
@@ -63,7 +63,6 @@ const Chevron = ({expanded}) => {
     );
 }
 function Channel() {
-  const [expanded, setExpanded] = useState(false);
   return (
 
       <div className="channel-bar">
