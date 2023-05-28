@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
-
+import * as BsIcon from 'react-icons/bs'
 function MainBody() {
   return (
     <div className="main-body">
@@ -48,8 +48,8 @@ function MainBody() {
         
         </div>
    
-        
-    
+        <ChatBar/>
+
     </div>
   )
 }
@@ -79,9 +79,9 @@ const Post = ({
 
 const ChatBar = () => {
   return(
-    <div className="search-bar">
-      
-
+    <div className="chat-bar">
+      <BsIcon.BsFillPlusCircleFill size={22} className="text-green-500 dark:shadow-lg mx-2  dark:text-primary cursor-pointer"/>
+      <input className="chat-bar-input" type="text" placeholder="Search..." />
     </div>
   ) 
 }

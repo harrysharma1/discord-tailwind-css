@@ -46,8 +46,8 @@ const ChannelBarBodyDropdown = ({title,subcategories}) => {
 const ChannelBarBodyDropdownItem = ({subcategory}) => {
         return(
             <div className="channel-bar-body-dropdown-items">
-                <BootstrapIcons.BsHash size={25} className="text-white"/>  
-                <div className="justify-items-center">
+                <BootstrapIcons.BsHash size={25} className="dark:text-white text-gray-700"/>  
+                <div className="justify-items-center dark:text-gray-600 text-gray-500">
                     {subcategory}
                 </div>
                 

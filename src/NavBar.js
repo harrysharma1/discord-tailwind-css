@@ -1,7 +1,10 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
+import * as BsIcons from 'react-icons/bs'
+import useDarkMode from './useDarkMode'
+
 function NavBar() {
     const [icon,setIcon] = useState(false);
     const handleIconChange = () => {
@@ -13,12 +16,13 @@ function NavBar() {
             <FaIcons.FaDiscord size={25}/>
             <Title/>
         </div>
+        <Darkmode/>
         <SearchBar/>
 
         <div onClick={handleIconChange}>
-            {icon? <AiIcons.AiFillBell size={25} className="text-gray-500 cursor-pointer"/>:<AiIcons.AiOutlineBell size={25} className="text-gray-500 cursor-pointer"/>}
+            {icon? <AiIcons.AiFillBell size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer"/>:<AiIcons.AiOutlineBell size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer"/>}
         </div>
-        <FaIcons.FaUserCircle size={25} className="text-gray-500 cursor-pointer"/>
+        <FaIcons.FaUserCircle size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer"/>
        
     </div>
   )
@@ -32,6 +36,22 @@ const SearchBar = ()=> {
     )
 
 }
+
+const Darkmode = ()=> {
+    const [darkMode, setDarkMode] = useDarkMode();
+   
+    const handleIconChange = () => {
+       setDarkMode(!darkMode);
+    }
+    return(
+        <div className="dark-mode" onClick={handleIconChange}>
+            {darkMode ? <BsIcons.BsMoon size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer dark:hover:text-green-700 hover:text-green-500"/>:<BsIcons.BsSun size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer  dark:hover:text-green-700 hover:text-green-500"/>}
+        </div>
+    )
+}
+
+
 const Title = ()=> <h5>tailwind-css</h5>
+
 
 export default NavBar

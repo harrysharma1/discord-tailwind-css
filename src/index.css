@@ -4,45 +4,43 @@
 
 @layer components{
   /* Sidebar */
-  .sidebar-icons{
+  .sidebar-icons {
     @apply relative flex items-center justify-center 
-    h-12 w-12 mt-2 mb-2 mx-auto shadow-lg 
-    bg-gray-800 text-green-400 
-    hover:text-white
-    rounded-3xl hover:rounded-xl
-    transition-all duration-300 ease-in-out
-    cursor-pointer;
-    ;
+    h-12 w-12 mt-2 mb-2 mx-auto  
+    bg-gray-400 hover:bg-green-600 dark:bg-gray-800 
+    text-green-500 hover:text-white
+    hover:rounded-xl rounded-3xl
+    transition-all duration-300 ease-linear
+    cursor-pointer shadow-lg ;
   }
 
-  .sidebar-tooltip{
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 
-    rounded-md shadow-md
-    text-white bg-gray-900
-    text-xs font-bold
-    transition-all duration-100 scale-0 origin-left
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+    text-white bg-gray-900 
+    text-xs font-bold 
+    transition-all duration-100 scale-0 origin-left;
   }
 
-  .sidebar-divider{
-    @apply border border-gray-800 rounded-full
-    mx-2 
+  .sidebar-divider {
+    @apply bg-gray-200 dark:bg-gray-800 
+    border border-gray-200 dark:border-gray-800 rounded-full
+    mx-2;
   }
-
   /* Channel */
   .channel-bar{
-    @apply w-72 h-screen m-0 ml-16 bg-gray-400 dark:bg-gray-800
+    @apply w-72 h-screen m-0 ml-16 bg-gray-200 dark:bg-gray-800
     overflow-hidden;
   }
 
   .channel-bar-title{
     @apply flex items-start text-left 
-    p-4 pt-5 left-5 font-bold tracking-wider  text-lg text-gray-100
+    p-4 pt-5 left-5 font-bold tracking-wider  text-lg dark:text-gray-100 text-gray-500
   }
   
   .channel-bar-body-dropdown{
     @apply flex flex-col 
     pb-5 left-5 space-y-4
-    text-gray-500 text-left px-4 font-bold 
+    dark:text-gray-600 text-gray-500 text-left px-4 font-bold 
     cursor-pointer
   }
 
@@ -64,7 +62,7 @@
 
   /* Main Body */
   .main-body{
-    @apply flex flex-col w-full h-screen m-0 bg-gray-700 
+    @apply flex flex-col w-full h-screen m-0 dark:bg-gray-700 bg-gray-300
   }
   .main-body-content{
     @apply flex flex-col items-center h-full w-full
@@ -116,7 +114,7 @@
     @apply flex-none
     w-12 h-full 
     rounded-full shadow-md
-    object-cover bg-gray-100 
+    object-cover dark:bg-gray-100 bg-gray-500
     mb-auto mt-0 mx-0 
     cursor-pointer;
   }
@@ -124,25 +122,43 @@
   .timestamp {
     @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
   }
+
+  /* Chat Bar */
+  .chat-bar{
+    @apply flex flex-row items-center justify-between 
+    fixed left-80 right-8 bottom-2 
+    rounded-lg shadow-lg 
+    bg-gray-400 dark:bg-gray-600 px-2
+    h-12;
+  }
+  .chat-bar-input{
+    @apply font-semibold w-full
+    bg-transparent outline-none 
+    ml-0 mr-auto
+    text-gray-500  dark:text-gray-400 placeholder-gray-500
+    cursor-text;
+  }
+
   /* Navbar */
   .nav-bar{
     @apply flex flex-row items-center space-x-2 
-    w-full h-16 px-4 py-2 bg-gray-700 shadow-lg
+    w-full h-16 px-4 py-2 dark:bg-gray-700 bg-gray-300 shadow-lg
   }
   .title-text{
-    @apply flex text-gray-500 font-bold font-mono flex-1
+    @apply flex dark:text-gray-600 text-gray-500 font-bold font-mono flex-1
     flex-row items-center justify-items-start space-x-1
   }
 
   .search{
-    @apply w-1/5 flex items-center justify-start bg-gray-600
-    text-gray-500 
+    @apply w-1/5 flex items-center justify-start 
+    dark:bg-gray-600   bg-gray-400
+    dark:text-gray-400 text-gray-600
     px-2 h-9 ml-0 mr-0 rounded-md shadow-md transition duration-300 ease-in-out
   }
 
   .search-input{
     @apply w-full h-full font-sans font-semibold
-    bg-transparent outline-none text-gray-500 placeholder-gray-500 pl-1 rounded
+    bg-transparent outline-none dark:text-gray-500 dark:placeholder-gray-500 placeholder-gray-600 pl-1 rounded
   }
  
 }
