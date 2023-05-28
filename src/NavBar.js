@@ -45,7 +45,7 @@ const Darkmode = ()=> {
     }
     return(
         <div className="dark-mode" onClick={handleIconChange}>
-            {darkMode ? <BsIcons.BsMoon size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer dark:hover:text-green-700 hover:text-green-500"/>:<BsIcons.BsSun size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer  dark:hover:text-green-700 hover:text-green-500"/>}
+            {darkMode ? <BsIcons.BsMoonFill size={25} className="darkmode-icon"/>:<BsIcons.BsSunFill size={25} className="darkmode-icon"/>}
         </div>
     )
 }

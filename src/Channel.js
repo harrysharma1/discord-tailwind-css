@@ -15,9 +15,9 @@ const ChannelBarHead = () => {
 const ChannelBarBody = () => {
     return(
         <div>
-            <ChannelBarBodyDropdown title="Topics" subcategories={["tailwind-css","react"]} />
-            <ChannelBarBodyDropdown title="Questions" subcategories={["jit-compilation","purge-files","dark-mode"]}/>
-            <ChannelBarBodyDropdown title="Random" subcategories={["variants","plugins"]}/>
+            <ChannelBarBodyDropdown title="Languages" subcategories={["java","python","scala","javascript",]} />
+            <ChannelBarBodyDropdown title="Frameworks" subcategories={["Django","React"]}/>
+            <ChannelBarBodyDropdown title="Favourites" subcategories={["Machine Learning","Web-development","Data engineering"]}/>
         </div>
     )
 }
@@ -34,7 +34,7 @@ const ChannelBarBodyDropdown = ({title,subcategories}) => {
                     <h5 className={expanded ?'channel-bar-body-dropdown-selected':'channel-bar-body-dropdown-text'}>
                          {title}
                     </h5>
-                    <FaIcons.FaPlus />
+                    <FaIcons.FaPlus className="flex-shrink-0"/>
                 </div>
                 {expanded && 
                     subcategories&&
@@ -46,7 +46,7 @@ const ChannelBarBodyDropdown = ({title,subcategories}) => {
 const ChannelBarBodyDropdownItem = ({subcategory}) => {
         return(
             <div className="channel-bar-body-dropdown-items">
-                <BootstrapIcons.BsHash size={25} className="dark:text-white text-gray-700"/>  
+                <BootstrapIcons.BsHash size={25} className="dark:text-white text-gray-700 flex-shrink-0"/>  
                 <div className="justify-items-center dark:text-gray-600 text-gray-500">
                     {subcategory}
                 </div>
