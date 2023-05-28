@@ -152,13 +152,13 @@
   .search{
     @apply w-1/5 flex items-center justify-start 
     dark:bg-gray-600   bg-gray-400
-    dark:text-gray-400 text-gray-600
+    dark:text-gray-500 text-gray-500
     px-2 h-9 ml-0 mr-0 rounded-md shadow-md transition duration-300 ease-in-out
   }
 
   .search-input{
     @apply w-full h-full font-sans font-semibold
-    bg-transparent outline-none dark:text-gray-500 dark:placeholder-gray-500 placeholder-gray-600 pl-1 rounded
+    bg-transparent outline-none dark:text-gray-200 dark:placeholder-gray-500 placeholder-gray-600 pl-1 rounded
   }
 
   /* Darkmode Icon */

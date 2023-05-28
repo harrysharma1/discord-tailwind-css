@@ -1,11 +1,22 @@
 import React from 'react'
 import NavBar from './NavBar'
 import * as BsIcon from 'react-icons/bs'
+import Ywach from '../assets/Bleach 5.png'
 function MainBody() {
+
   return (
     <div className="main-body">
         <NavBar/>
         <div className="main-body-content">
+        <Post
+          username="Harry Sharma"
+          text={`
+          The below is just seeded data. The below is styled purely from tailwind and the inspiration of this design initially came from
+          a Fireship video linked here: `}
+          timestamp="14 hour ago" 
+          imageUrl={Ywach}
+          externalUrl="https://www.youtube.com/watch?v=pfaSUYaSgRo"  
+        />
         <Post
           username="Luffy"
           text="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
@@ -99,11 +110,14 @@ const Post = ({
    username, 
    timestamp, 
    text,
-   imageUrl
+   imageUrl,
+   externalUrl,
   }) => {
 
   // const seed = Math.round(Math.random() * 100);
   // https://avatars.dicebear.com/api/open-peeps/${seed}.svg
+
+ 
   return (
     <div className="post">
       <div className='avatar-wrapper'>
@@ -115,7 +129,16 @@ const Post = ({
           {username}
           <small className="timestamp">{timestamp}</small>
         </p>
-        <p className='post-text'>{text}</p>
+        <div className='post-text'>
+          {text}  
+          {externalUrl && (
+            <a href="https://www.youtube.com/watch?v=pfaSUYaSgRo" className="font-bold font-mono underline text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600">
+              link.
+            </a>
+          )}
+        
+        </div>
+      
       </div>
     </div>
   );
