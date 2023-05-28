@@ -1,7 +1,7 @@
 import './App.css';
-import Sidebar from './Sidebar'
-import Channel from './Channel'
-import MainBody from './MainBody';
+import Sidebar from './components/Sidebar'
+import Channel from './components/Channel'
+import MainBody from './components/MainBody';
 function App() {
   return (
     <div className="flex flex-row">

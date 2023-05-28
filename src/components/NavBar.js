@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import * as BsIcons from 'react-icons/bs'
-import useDarkMode from './useDarkMode'
+import useDarkMode from '../hooks/useDarkMode'
 
 function NavBar() {
     const [icon,setIcon] = useState(false);
