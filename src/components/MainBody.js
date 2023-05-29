@@ -1,7 +1,9 @@
-import React from 'react'
+import {React} from 'react'
 import NavBar from './NavBar'
 import * as BsIcon from 'react-icons/bs'
 import Ywach from '../assets/Bleach 5.png'
+import Post from './Post'
+
 function MainBody() {
 
   return (
@@ -39,6 +41,7 @@ function MainBody() {
           timestamp="6 hours ago"
           imageUrl="https://e7.pngegg.com/pngimages/313/542/png-clipart-vinsmoke-sanji-monkey-d-luffy-roronoa-zoro-tony-tony-chopper-jolly-roger-jolly-white-flag.png"
         />
+  
 
 
         <Post
@@ -86,6 +89,8 @@ function MainBody() {
           timestamp="1 hours ago"
           imageUrl="https://www.clipartmax.com/png/middle/173-1731493_flag-chopper-2-v-one-piece-chopper-jolly-roger.png"
         />
+        
+        
         <Post
           username="Jinbei"
           text="
@@ -95,10 +100,6 @@ function MainBody() {
           imageUrl="https://w7.pngwing.com/pngs/360/845/png-transparent-monkey-d-luffy-usopp-t-shirt-nami-roronoa-zoro-jinbei-jolly-roger-piracy-flower.png"
         />
 
-        
-
-
-        
         </div>
    
         <ChatBar/>
@@ -106,43 +107,11 @@ function MainBody() {
     </div>
   )
 }
-const Post = ({
-   username, 
-   timestamp, 
-   text,
-   imageUrl,
-   externalUrl,
-  }) => {
 
-  // const seed = Math.round(Math.random() * 100);
-  // https://avatars.dicebear.com/api/open-peeps/${seed}.svg
 
- 
-  return (
-    <div className="post">
-      <div className='avatar-wrapper'>
-        <img src={`${imageUrl}`} alt='' className='avatar' />
-      </div>
 
-      <div className='post-content'>
-        <p className='post-owner'>
-          {username}
-          <small className="timestamp">{timestamp}</small>
-        </p>
-        <div className='post-text'>
-          {text}  
-          {externalUrl && (
-            <a href="https://www.youtube.com/watch?v=pfaSUYaSgRo" className="font-bold font-mono underline text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600">
-              link.
-            </a>
-          )}
-        
-        </div>
-      
-      </div>
-    </div>
-  );
-};
+
+
 
 const ChatBar = () => {
   return(
@@ -152,5 +121,8 @@ const ChatBar = () => {
     </div>
   ) 
 }
+
+
+
 
 export default MainBody

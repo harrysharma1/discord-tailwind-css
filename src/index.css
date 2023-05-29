@@ -101,7 +101,7 @@
   }
 
   .post-owner {
-    @apply text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
+    @apply flex flex-row text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
   }
 
   .avatar-wrapper {
@@ -120,7 +120,7 @@
   }
 
   .timestamp {
-    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-500 ml-2;
+    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-500 ml-2 pt-[4px];
   }
 
   /* Chat Bar */
@@ -168,5 +168,21 @@
     dark:hover:text-green-500 hover:text-green-600
     cursor-pointer
   }
+
+  /* User Card */
+  .user-card{
+   @apply dark:bg-gray-900 bg-gray-500 shadow-lg w-52 h-80 rounded-xl absolute 
+  }
+  .user-card-wrapper{
+    @apply flex text-base 
+  }
+
+  .user-card-avatar-wrapper{
+    @apply mx-5 my-5
+  }
+  .user-card-avatar{
+    @apply w-10 h-10 rounded-full 
+  }
+
  
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as BootstrapIcons from 'react-icons/bs'
-
+import { motion } from 'framer-motion'
 function Sidebar() {
   const handleEmail = () => {
     window.location.href="mailto:harrysharma1066@gmail.com" 
@@ -24,7 +24,9 @@ function Sidebar() {
 
 const SidebarIcon = ({icon,text}) => (
     <div className="sidebar-icons group">
-        {icon}  
+        <motion.div whileTap={{scale:0.9}} transition={{stiffness:2,power:5}}>
+             {icon}  
+        </motion.div> 
     <span className="sidebar-tooltip group-hover:scale-100">
         {text}
     </span>

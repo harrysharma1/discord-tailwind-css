@@ -1,11 +1,16 @@
 import React from 'react'
 
-function UserCard() {
+function UserCard({user,imageUrl}) {
+    console.log(user)
   return (
-    <div className="w-200">
-      hello
+    <div className="user-card">
+      <div className="user-card-avatar-wrapper">
+        <img src={`${imageUrl}`} alt='' className='user-card-avatar' />
+      </div>
     </div>
   )
 }
 
 export default UserCard
+
+
