@@ -165,7 +165,7 @@
   .darkmode-icon{
     @apply 
     dark:text-gray-500 text-gray-600
-    dark:hover:text-green-500 hover:text-green-700
+    dark:hover:text-green-500 hover:text-green-600
     cursor-pointer
   }
  

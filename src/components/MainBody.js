@@ -76,7 +76,7 @@ function MainBody() {
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem.
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. piscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem.    "
           timestamp="2 hours ago"
-          imageUrl="https://www.pinclipart.com/picdir/big/237-2376826_franky-jolly-roger-png-clipart-franky-roronoa-zoro.png"
+          imageUrl="https://e1.pngegg.com/pngimages/827/838/png-clipart-one-piece-jolly-roger-dock-and-folder-icons-by-new-world-franky-jolly-roger-skull-with-sledgehammer-and-saw-logo-thumbnail.png"
         />
          <Post
           username="Chopper"
