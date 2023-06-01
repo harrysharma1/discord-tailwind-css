@@ -28,8 +28,8 @@
   }
   /* Channel */
   .channel-bar{
-    @apply w-72 h-screen m-0 ml-16 bg-gray-200 dark:bg-gray-800
-    overflow-hidden;
+    @apply w-72 max-h-full m-0 ml-16 bg-gray-200 dark:bg-gray-800
+  ;
   }
 
   .channel-bar-title{
@@ -62,7 +62,7 @@
 
   /* Main Body */
   .main-body{
-    @apply flex flex-col w-full h-screen m-0 dark:bg-gray-700 bg-gray-300
+    @apply flex flex-col w-full max-h-screen m-0 dark:bg-gray-700 bg-gray-300
   }
   .main-body-content{
     @apply flex flex-col items-center h-full w-full
@@ -170,19 +170,11 @@
   }
 
   /* User Card */
-  .user-card{
-   @apply dark:bg-gray-900 bg-gray-500 shadow-lg w-52 h-80 rounded-xl absolute 
-  }
-  .user-card-wrapper{
-    @apply flex text-base 
+  .user-card-base{
+   @apply flex flex-col bg-orange-400 shadow-lg w-64 h-[500px] rounded-xl  flex-grow-0 
   }
 
-  .user-card-avatar-wrapper{
-    @apply mx-5 my-5
-  }
-  .user-card-avatar{
-    @apply w-10 h-10 rounded-full 
-  }
+
 
  
 }

@@ -18,7 +18,8 @@ const ChannelBarBody = () => {
             <ChannelBarBodyDropdown title="Languages" subcategories={["java","python","scala","javascript",]} />
             <ChannelBarBodyDropdown title="Frameworks" subcategories={["Django","React"]}/>
             <ChannelBarBodyDropdown title="Favourites" subcategories={["Machine Learning","Web-development","Data engineering"]}/>
-        </div>
+           
+         </div>
     )
 }
 

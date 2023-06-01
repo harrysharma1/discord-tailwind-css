@@ -9,6 +9,7 @@ function MainBody() {
   return (
     <div className="main-body">
         <NavBar/>
+        
         <div className="main-body-content">
         <Post
           username="Harry Sharma"
@@ -99,11 +100,11 @@ function MainBody() {
           timestamp="30 minutes ago"
           imageUrl="https://w7.pngwing.com/pngs/360/845/png-transparent-monkey-d-luffy-usopp-t-shirt-nami-roronoa-zoro-jinbei-jolly-roger-piracy-flower.png"
         />
-
+       
         </div>
-   
+     
+      
         <ChatBar/>
-
     </div>
   )
 }

@@ -1,19 +1,48 @@
-import {React, useState, useRef, useEffect} from 'react'
-import UserCard from './UserCard'
-import {
-  useFloating,
-  autoUpdate,
-  offset,
-  flip,
-  shift,
-  useDismiss,
-  useRole,
-  useClick,
-  useInteractions,
-  FloatingFocusManager,
-  useId,
-} from "@floating-ui/react";
+import {React, useState} from 'react'
 
+import { Popper,ClickAwayListener } from '@mui/base';
+import {Avatar} from '@mui/material';
+import * as BsIcons from 'react-icons/bs';
+const Divider = () => <div className="sidebar-divider mt-[20px]"></div>;
+const AboutMe = () => {
+ return(
+   <div>
+         <p className="font-semibold text-[10px] uppercase">
+            About me 
+         </p>
+         <p className="text-[8px]">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         </p>                   
+   </div>
+ )
+}
+const MemberSince = () => {
+  return(
+      <div>
+          <p className="font-semibold text-[10px] uppercase">
+             Discord member since
+         </p>
+         <p className="text-[8px]">
+            Oct 20, 1999
+         </p>
+             
+      </div>
+  )
+}
+const Note = () => {
+  return(
+    <div>
+           <p className="font-semibold text-[12px] uppercase">
+            Note
+         </p>
+          <input
+          className="outline-none bg-black text-white placeholder:text-[8px] text-[8px]"
+          placeholder="Click to add a note"
+          ></input>
+             
+    </div>
+  )
+}
 const Post = ({
     username, 
     timestamp, 
@@ -24,68 +53,72 @@ const Post = ({
  
    // const seed = Math.round(Math.random() * 100);
    // https://avatars.dicebear.com/api/open-peeps/${seed}.svg
-   const [isOpen, setOpen] = useState(false);
+  
+   const [anchorEl, setAnchorEl] = useState(null);
 
-   const handleUser = () => {
-     setOpen(!isOpen);
+   const handleClick = (event) => {
+     setAnchorEl(anchorEl ? null : event.currentTarget);
    };
 
-   const {refs, floatingStyles, context}= useFloating({
-            open: isOpen,
-            onOpenChange:setOpen,
-            placement:'right',
-            strategy:'fixed',
-            autoUpdate:true,
-            transform: true,
-            middleware:[
-                offset({
-                     mainAxis:8,
-                     crossAxis:-10,
-                }),
-                flip({fallbackAxisSideDirection:"ed"}),
-                shift(),
-            ],
-           
+   
+   const open = Boolean(anchorEl);
+ 
+   const handleClickAway = () => {
+     setAnchorEl(null);
+   };
 
-   });
-   const click = useClick(context);
-   const dismiss = useDismiss(context);
-   const role = useRole(context);
-   const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
-    dismiss,
-    role
-  ]);
-
-  const headingId = useId();
-
-
+   const id = open ? 'simple-popper' : undefined;
+ 
    return (
      <div className="post">
        <div className='avatar-wrapper'>
-         <img src={`${imageUrl}`} alt='' className='avatar' />
+       <Avatar alt={username} src={imageUrl} />
        </div>
  
        <div className='post-content'>
          <p className='post-owner'>
-           <div ref={refs.setReference}{...getReferenceProps()}>
-             <p className="hover:underline" onClick={handleUser} ref={useRef()}>{username}</p>
-           </div>
-          
-           {isOpen &&(
-                <FloatingFocusManager context={context} modal={false}>
-                    <div 
-                    className="Popover"
-                    ref={refs.setFloating}
-                    style={floatingStyles}
-                    aria-labelledby={headingId}
-                    {...getFloatingProps()}
-                    >
-                        <UserCard user={username} imageUrl={imageUrl} id={`${username}-float`}/>
+          <button aria-describedby={id} type="button" onClick={handleClick} className="underline font-semibold outline-none"> 
+            {username}
+          </button>
+          <Popper 
+          id={id} 
+          open={open} 
+          anchorEl={anchorEl}
+          placement='right-start'   
+          >
+                <ClickAwayListener onClickAway={handleClickAway}>
+                <div className="flex bg-slate-400 w-64 h-[400px] rounded-xl">
+                    <div className="bg-slate-600 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed">
+                  
                     </div>
-                </FloatingFocusManager>
-            
-            )}
+                    <Avatar
+                    sx={{
+                        width: 75,
+                        height: 75,
+                        position: 'absolute',
+                        left:20,
+                        top:20,
+                    }}
+                    alt={username} src={imageUrl}
+                    ></Avatar>
+                    <div className="fixed rounded-full opacity-50 bg-black w-8 h-8 ml-[81.5%] mt-[2%]"></div>
+                    <BsIcons.BsPencilFill size={15} className="fixed text-white ml-[85%] mt-[5%]"/>
+                    <div className="bg-slate-600 mt-16 w-64 rounded-b-xl"></div>
+                    <div className="flex flex-col bg-black w-[205px] h-[260px]  fixed rounded-xl mt-[110px] ml-[25px]">
+                        <p className="text-white font-semibold ml-[20px] mt-[20px]">{username}</p>
+                        <p className="text-white ml-[20px] font-semibold text-xs">{username}#1234</p>
+                        <Divider/>
+                        <div className="text-white ml-[20px] mt-[10px]">
+                            <AboutMe/>
+                            <div className="mt-[10px]"/>
+                            <MemberSince/>
+                            <div className="mt-[10px]"/>
+                            <Note/>
+                        </div>
+                    </div>
+                </div>
+                </ClickAwayListener>
+          </Popper>
            <small className="timestamp">{timestamp}</small>
          </p>
          <div className='post-text'>
@@ -96,8 +129,9 @@ const Post = ({
              </a>
            )}
          </div>
-       
+          
        </div>
+     
      </div>
    );
  };
