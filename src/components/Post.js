@@ -106,7 +106,6 @@ const Post = ({
                          <BsIcons.BsPencilFill size={15} className="fixed opacity-100 text-white ml-[3.5%] mt-[3.5%] cursor-pointer"/>
      
                          </div>
-          
                     )}
                  
      
