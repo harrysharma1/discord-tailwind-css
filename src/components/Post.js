@@ -87,9 +87,8 @@ const Post = ({
           placement='right-start'   
           >
                 <ClickAwayListener onClickAway={handleClickAway}>
-                <div className="flex bg-slate-400 w-64 h-[400px] rounded-xl">
-                    <div className="bg-slate-600 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed">
-                  
+                <div className="flex bg-yellow-500 w-64 h-[400px] rounded-xl">
+                    <div className="bg-gray-900 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed">         
                     </div>
                     <Avatar
                     sx={{
@@ -101,9 +100,18 @@ const Post = ({
                     }}
                     alt={username} src={imageUrl}
                     ></Avatar>
-                    <div className="fixed rounded-full opacity-50 bg-black w-8 h-8 ml-[81.5%] mt-[2%]"></div>
-                    <BsIcons.BsPencilFill size={15} className="fixed text-white ml-[85%] mt-[5%]"/>
-                    <div className="bg-slate-600 mt-16 w-64 rounded-b-xl"></div>
+                    
+                    {username==="Harry Sharma" &&(
+                         <div className="fixed rounded-full opacity-50 hover:opacity-75 bg-black w-8 h-8 ml-[81.5%] mt-[2%] cursor-auto">
+                         <BsIcons.BsPencilFill size={15} className="fixed opacity-100 text-white ml-[3.5%] mt-[3.5%] cursor-pointer"/>
+     
+                         </div>
+          
+                    )}
+                 
+     
+                   
+                    <div className="bg-gray-900 mt-16 w-64 rounded-b-xl"></div>
                     <div className="flex flex-col bg-black w-[205px] h-[260px]  fixed rounded-xl mt-[110px] ml-[25px]">
                         <p className="text-white font-semibold ml-[20px] mt-[20px]">{username}</p>
                         <p className="text-white ml-[20px] font-semibold text-xs">{username}#1234</p>
