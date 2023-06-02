@@ -1,48 +1,12 @@
 import {React, useState} from 'react'
 
 import { Popper,ClickAwayListener } from '@mui/base';
-import {Avatar} from '@mui/material';
+import {Avatar, Container} from '@mui/material';
 import * as BsIcons from 'react-icons/bs';
+import { Note } from './Note';
+import { MemberSince } from './MemberSince';
+import { AboutMe } from './AboutMe';
 const Divider = () => <div className="sidebar-divider mt-[20px]"></div>;
-const AboutMe = () => {
- return(
-   <div>
-         <p className="user-card-facts-title">
-            About me 
-         </p>
-         <p className="user-card-facts-info">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         </p>                   
-   </div>
- )
-}
-const MemberSince = () => {
-  return(
-      <div>
-          <p className="user-card-facts-title">
-             Discord member since
-         </p>
-         <p className="user-card-facts-info">
-            Oct 20, 1999
-         </p>
-             
-      </div>
-  )
-}
-const Note = () => {
-  return(
-    <div>
-          <p className="user-card-facts-title">
-            Note
-         </p>
-          <textarea
-          className="user-card-note-textarea"
-          placeholder="Click to add a note"
-          ></textarea>
-             
-    </div>
-  )
-}
 const Post = ({
     username, 
     timestamp, 
@@ -68,23 +32,43 @@ const Post = ({
    };
 
    const id = open ? 'simple-popper' : undefined;
- 
+   const element=document.querySelector('.main-body')
    return (
      <div className="post">
        <div className='avatar-wrapper'>
        <Avatar alt={username} src={imageUrl} />
        </div>
- 
+
        <div className='post-content'>
          <p className='post-owner'>
           <button aria-describedby={id} type="button" onClick={handleClick} className="underline font-semibold outline-none"> 
             {username}
           </button>
+          {/* User Card should probably be a separate component but I'm lazy and this is just a demo */}
+    
           <Popper 
           id={id} 
           open={open} 
           anchorEl={anchorEl}
-          placement='right-start'   
+          placement='right-start'
+          disablePortal={false}
+          modifiers={[
+            {
+            name: 'offset',
+            options:{
+              offset:[1,9],
+            }
+            },
+            {
+              name:'preventOverflow',
+              options:{
+                mainAxis:true,
+                rootBoundary:element,
+                
+              }
+            },
+           
+          ]}
           >
                 <ClickAwayListener onClickAway={handleClickAway}>
                 <div className="user-card-base">

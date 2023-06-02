@@ -175,11 +175,11 @@
   }
 
   .user-card-secondary{
-    @apply bg-gray-900 mt-16 w-64 rounded-b-xl
+    @apply dark:bg-gray-900 bg-gray-500 mt-16 w-64 rounded-b-xl
   }
 
   .user-card-tertiary{
-    @apply flex flex-col bg-black w-[205px] h-[260px] fixed rounded-xl mt-[110px] ml-[25px]
+    @apply flex flex-col dark:bg-black bg-gray-900 w-[205px] h-[260px] fixed rounded-xl mt-[110px] ml-[25px]
   }
 
   .user-card-username{
@@ -203,11 +203,11 @@
   }
 
   .user-card-note-textarea{
-    @apply outline-none bg-black text-white placeholder:text-[8px] text-[8px] w-[170px] h-[60px] resize-none
+    @apply outline-none dark:bg-black bg-gray-900 text-white placeholder:text-[8px] text-[8px] w-[170px] h-[60px] resize-none
   }
 
   .user-card-circle{
-    @apply bg-gray-900 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed
+    @apply dark:bg-gray-900 bg-gray-500 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed
   }
 
   .user-card-info-space{
