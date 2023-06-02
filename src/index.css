@@ -171,7 +171,55 @@
 
   /* User Card */
   .user-card-base{
-   @apply flex flex-col bg-orange-400 shadow-lg w-64 h-[500px] rounded-xl  flex-grow-0 
+   @apply flex bg-yellow-500 w-64 h-[400px] rounded-xl
+  }
+
+  .user-card-secondary{
+    @apply bg-gray-900 mt-16 w-64 rounded-b-xl
+  }
+
+  .user-card-tertiary{
+    @apply flex flex-col bg-black w-[205px] h-[260px] fixed rounded-xl mt-[110px] ml-[25px]
+  }
+
+  .user-card-username{
+    @apply text-white font-semibold ml-[20px] mt-[20px]
+  }
+
+  .user-card-username-full{
+    @apply text-white ml-[20px] font-semibold text-xs
+  }
+
+  .user-card-facts{
+    @apply text-white ml-[20px] mt-[10px]
+  }
+
+  .user-card-facts-title{
+    @apply font-semibold text-[10px] uppercase
+  }
+
+  .user-card-facts-info{
+    @apply text-[8px]
+  }
+
+  .user-card-note-textarea{
+    @apply outline-none bg-black text-white placeholder:text-[8px] text-[8px] w-[170px] h-[60px] resize-none
+  }
+
+  .user-card-circle{
+    @apply bg-gray-900 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed
+  }
+
+  .user-card-info-space{
+    @apply mt-[10px]
+  }
+
+  .edit-button-circle{
+    @apply fixed rounded-full opacity-50 hover:opacity-75 bg-black w-8 h-8 ml-[81.5%] mt-[2%] cursor-auto
+  }
+
+  .edit-button-icon{
+    @apply fixed opacity-100 text-white ml-[3.5%] mt-[3.5%] cursor-pointer
   }
 
 

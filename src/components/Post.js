@@ -7,10 +7,10 @@ const Divider = () => <div className="sidebar-divider mt-[20px]"></div>;
 const AboutMe = () => {
  return(
    <div>
-         <p className="font-semibold text-[10px] uppercase">
+         <p className="user-card-facts-title">
             About me 
          </p>
-         <p className="text-[8px]">
+         <p className="user-card-facts-info">
              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
          </p>                   
    </div>
@@ -19,10 +19,10 @@ const AboutMe = () => {
 const MemberSince = () => {
   return(
       <div>
-          <p className="font-semibold text-[10px] uppercase">
+          <p className="user-card-facts-title">
              Discord member since
          </p>
-         <p className="text-[8px]">
+         <p className="user-card-facts-info">
             Oct 20, 1999
          </p>
              
@@ -32,13 +32,13 @@ const MemberSince = () => {
 const Note = () => {
   return(
     <div>
-           <p className="font-semibold text-[12px] uppercase">
+          <p className="user-card-facts-title">
             Note
          </p>
-          <input
-          className="outline-none bg-black text-white placeholder:text-[8px] text-[8px]"
+          <textarea
+          className="user-card-note-textarea"
           placeholder="Click to add a note"
-          ></input>
+          ></textarea>
              
     </div>
   )
@@ -50,10 +50,10 @@ const Post = ({
     imageUrl,
     externalUrl,
    }) => {
- 
-   // const seed = Math.round(Math.random() * 100);
+   
+  //  const seed = Math.round(Math.random() * 100);
    // https://avatars.dicebear.com/api/open-peeps/${seed}.svg
-  
+ 
    const [anchorEl, setAnchorEl] = useState(null);
 
    const handleClick = (event) => {
@@ -87,8 +87,8 @@ const Post = ({
           placement='right-start'   
           >
                 <ClickAwayListener onClickAway={handleClickAway}>
-                <div className="flex bg-yellow-500 w-64 h-[400px] rounded-xl">
-                    <div className="bg-gray-900 w-[85px] h-[85px] mt-[15px] ml-[15px] rounded-full fixed">         
+                <div className="user-card-base">
+                    <div className="user-card-circle">         
                     </div>
                     <Avatar
                     sx={{
@@ -102,24 +102,21 @@ const Post = ({
                     ></Avatar>
                     
                     {username==="Harry Sharma" &&(
-                         <div className="fixed rounded-full opacity-50 hover:opacity-75 bg-black w-8 h-8 ml-[81.5%] mt-[2%] cursor-auto">
-                         <BsIcons.BsPencilFill size={15} className="fixed opacity-100 text-white ml-[3.5%] mt-[3.5%] cursor-pointer"/>
+                         <div className="edit-button-circle">
+                         <BsIcons.BsPencilFill size={15} className="edit-button-icon"/>
      
                          </div>
                     )}
-                 
-     
-                   
-                    <div className="bg-gray-900 mt-16 w-64 rounded-b-xl"></div>
-                    <div className="flex flex-col bg-black w-[205px] h-[260px]  fixed rounded-xl mt-[110px] ml-[25px]">
-                        <p className="text-white font-semibold ml-[20px] mt-[20px]">{username}</p>
-                        <p className="text-white ml-[20px] font-semibold text-xs">{username}#1234</p>
+                    <div className="user-card-secondary"></div>
+                    <div className="user-card-tertiary">
+                        <p className="user-card-username">{username}</p>
+                        <p className="user-card-username-full">{username}#1234</p>
                         <Divider/>
-                        <div className="text-white ml-[20px] mt-[10px]">
+                        <div className="user-card-facts">
                             <AboutMe/>
-                            <div className="mt-[10px]"/>
+                            <div className="user-card-info-space"/>
                             <MemberSince/>
-                            <div className="mt-[10px]"/>
+                            <div className="user-card-info-space"/>
                             <Note/>
                         </div>
                     </div>
