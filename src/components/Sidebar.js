@@ -7,18 +7,20 @@ function Sidebar() {
 
   const handleEmail = () => {
     window.location.href="mailto:harrysharma1066@gmail.com" 
+
+  
   }
 
 
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col dark:bg-gray-900 bg-white text-white shadow-lg">
-        <SidebarIcon icon={<FaIcons.FaGithub size={28} onClick={event=>window.location.href="https://github.com/harrysharma1"}/>} text="harrysharma1"/>
+        <SidebarIcon icon={<FaIcons.FaGithub size={28} onClick={event=>window.location.href=process.env.REACT_APP_GITHUB_URL}/>} text="harrysharma1"/>
         <Divider/>
-        <SidebarIcon icon={<FaIcons.FaLinkedin size={32} onClick={event=>window.location.href="https://www.linkedin.com/in/harry-sharma-567b21225/"}/>}text="harry-sharma-567b21225"/>
-        <SidebarIcon icon={<BootstrapIcons.BsDiscord size={20} onClick={event=>window.location.href="https://discordapp.com/users/discordapp.com/users/RetroASIAN123#7619"}/>} text="RetroASIAN123#7619"/>
+        <SidebarIcon icon={<FaIcons.FaLinkedin size={32} onClick={event=>window.location.href=process.env.REACT_APP_LINKEDIN_URL}/>}text="harry-sharma-567b21225"/>
+        <SidebarIcon icon={<BootstrapIcons.BsDiscord size={20} onClick={event=>window.location.href=process.env.REACT_APP_DISCORD_URL}/>} text="RetroASIAN123#7619"/>
         <SidebarIcon icon={<BootstrapIcons.BsMailbox2 size={20} onClick={handleEmail}/>}text="harrysharma1066@gmail.com"/>
         <Divider/>
-        <SidebarIcon icon={<BootstrapIcons.BsFillFileEarmarkTextFill size={20} onClick={event=>window.location.href="https://drive.google.com/file/d/16nZ62hsw09rEKwVH1FSIybfsWCYaB98G/view?usp=sharing"} />}text="Click to view CV"/>
+        <SidebarIcon icon={<BootstrapIcons.BsFillFileEarmarkTextFill size={20} onClick={event=>window.location.href=process.env.REACT_APP_GOOG_DOCS_CV_URL} />}text="Click to view CV"/>
       
     </div>
   )
