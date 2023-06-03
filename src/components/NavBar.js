@@ -6,11 +6,18 @@ import * as BsIcons from 'react-icons/bs'
 import * as HiIcons from 'react-icons/hi'
 import useDarkMode from '../hooks/useDarkMode'
 import {motion} from 'framer-motion'
+import { Drawer } from '@mui/material'
+
+
+
 function NavBar() {
     const [icon,setIcon] = useState(false);
+  
     const handleIconChange = () => {
             setIcon(!icon);
     }
+
+  
   return (
     <div className="nav-bar">
         <div className='title-text'>
@@ -31,7 +38,8 @@ function NavBar() {
         <motion.div whileHover={{scale:1.2}} whileTap={{scale:0.9}}>
              <HiIcons.HiUsers size={25} className="dark:text-gray-500 text-gray-600 cursor-pointer"/>
         </motion.div>
-       
+
+  
     </div>
   )
 }

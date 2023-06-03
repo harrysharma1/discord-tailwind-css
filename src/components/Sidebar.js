@@ -2,7 +2,9 @@ import React from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as BootstrapIcons from 'react-icons/bs'
 import { motion } from 'framer-motion'
-function Sidebar() {
+
+function Sidebar() { 
+
   const handleEmail = () => {
     window.location.href="mailto:harrysharma1066@gmail.com" 
   }
@@ -16,7 +18,7 @@ function Sidebar() {
         <SidebarIcon icon={<BootstrapIcons.BsDiscord size={20} onClick={event=>window.location.href="https://discordapp.com/users/discordapp.com/users/RetroASIAN123#7619"}/>} text="RetroASIAN123#7619"/>
         <SidebarIcon icon={<BootstrapIcons.BsMailbox2 size={20} onClick={handleEmail}/>}text="harrysharma1066@gmail.com"/>
         <Divider/>
-        <SidebarIcon icon={<BootstrapIcons.BsFillFileEarmarkTextFill size={20} />}text="Click to download CV"/>
+        <SidebarIcon icon={<BootstrapIcons.BsFillFileEarmarkTextFill size={20} onClick={event=>window.location.href="https://drive.google.com/file/d/16nZ62hsw09rEKwVH1FSIybfsWCYaB98G/view?usp=sharing"} />}text="Click to view CV"/>
       
     </div>
   )
@@ -25,7 +27,7 @@ function Sidebar() {
 const SidebarIcon = ({icon,text}) => (
     <div className="sidebar-icons group">
         <motion.div whileTap={{scale:0.9}} transition={{stiffness:2,power:5}}>
-             {icon}  
+            {icon}
         </motion.div> 
     <span className="sidebar-tooltip group-hover:scale-100">
         {text}
